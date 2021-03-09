@@ -1,0 +1,14 @@
+<input 
+    type="text" 
+    name="search" 
+    [(ngModel)]="search" 
+    (ngModelChange)="handleSearch($event)"
+/>
+<button (click)="clearSearch()">Clear</button>
+<ng-container *ngIf="users.length">
+    <div *ngFor="let user of users">
+        {{ user }} 
+    </div>
+</ng-container>
+<a routerLink="/users">Create New User</a>
+<router-outlet></router-outlet>
